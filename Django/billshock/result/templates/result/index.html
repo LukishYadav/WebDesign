@@ -1,4 +1,5 @@
 {% extends 'result/base.html' %}
+{% block title %}Result{% endblock %}
 {% block body %}
 <div class="container">
 <table class="table">
@@ -8,7 +9,9 @@
 
 
  <tdata>
- <tr><td>{{object.BRM_BILLER_ACCOUNT_T_ACCOUNT_NO}}</td><td>{{object.PROXIMITY}}</td></tr>
+ <tr><td>{{object.BRM_BILLER_ACCOUNT_T_ACCOUNT_NO}}</td><td>{{object.PROXIMITY}}</td> 
+ <td><a href="{% url 'result:delete' object.id %}"><span class="glyphicon glyphicon-minus"> Delete</span></a></td></tr>
+
  </tdata>
 
 </table>

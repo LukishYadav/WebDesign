@@ -1,7 +1,7 @@
 {% extends 'result/base.html' %}
-{% block title %}Main_Page{%  endblock %}
+{% block title %}Select{%  endblock %}
 {% block body %}
 {% for op in object_list %}
-<h1><a href="{% url 'result:detail' op.id %}"> <span class="glyphicon glyphicon-music"></span>{{op.BRM_BILLER_ACCOUNT_T_ACCOUNT_NO}}<h1><br>
+<h1><a href="{% url 'result:detail' op.id %}"> {{op.BRM_BILLER_ACCOUNT_T_ACCOUNT_NO}}<h1><br>
 	{% endfor %}
 {% endblock %}
