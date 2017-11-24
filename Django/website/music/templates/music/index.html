@@ -12,8 +12,17 @@
  <strong>Here are all my albums</strong>
  <ul>
    {% for album in album_all %} 
+  <div class="container">
+  	<div class="row">
+   <div class="col-sm-2">
+   <li><pre><a href="{% url 'music:detail' album.id %}">{{album.album_title}}</a></div>
 
-   <li><a href="{% url 'music:detail' album.id %}">{{album.album_title}}</a></li>
+  <div class="col-sm-2">	
+ 
+ <a href="{% url 'music:album-delete' album.id %}"><button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-trash"></span> Delete</button></a>
+
+</div></div></div>
+  </pre> </li>
    {% endfor %}
  </ul>
 
