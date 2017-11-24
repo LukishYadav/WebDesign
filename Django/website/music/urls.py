@@ -17,6 +17,8 @@ urlpatterns = [
 
 
     url(r'^album/(?P<pk>[0-9]+)/delete/$',views.AlbumDelete.as_view(),name='album-delete'),
+    
+    url(r'^song/add/(?P<pk>[0-9]+)/$',views.SongCreate.as_view(),name='song-add'),
     #/music/71/
     #url(r'^(?P<album_id>[0-9]+)/favorite $',views.favorite, name='favorite'),
 ]

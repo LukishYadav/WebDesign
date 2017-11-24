@@ -5,7 +5,10 @@
 
 {% block body %}
 
-<img src='{{album.album_logo}}'>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+<img src='{{album.album_logo.url}}'>
 
 
 
@@ -30,13 +33,12 @@
    </label>
    <br>	
  {% endfor %}
+ <a href="{% url 'music:album-delete' album.id %}"><button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-trash"></span> Delete</button></a>
  
+ <a href="{% url 'music:album-update' album.id %}"><button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-update"></span> Update</button></a> 
  
-  <a href="{% url 'music:album-delete' album.id %}"><button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-trash"></span> Delete </button></a>
 
-  
-  <a href="{% url 'music:album-update' album.id %}"><button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-trash"></span> Update</button></a>
-
-
+ <a href="{% url 'music:song-add' album.id %}"><button class="btn" type="submit"><span class="glyphicon glyphicon-plus"></span> Add Song </button></a>
+</div></div>
 
  {% endblock %} 

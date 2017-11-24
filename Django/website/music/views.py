@@ -2,7 +2,7 @@ from django.views import generic
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from django.core.urlresolvers import reverse_lazy
 
-from .models import Album
+from .models import Album,Song
 
 class IndexView(generic.ListView):
 	template_name='music/index.html'
@@ -27,3 +27,7 @@ class AlbumUpdate(UpdateView):
 class AlbumDelete(DeleteView):
 	model=Album
 	success_url=reverse_lazy('music:index')
+
+class SongCreate(CreateView):
+	model=Song
+	fields=['album','file_type','song_title','is_favorite']
