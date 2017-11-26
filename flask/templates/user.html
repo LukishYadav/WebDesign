@@ -1,0 +1,16 @@
+<!doctype html>
+{% extends "base.html" %}
+{% block content %}
+{% if user %}
+    <h1>Hello {{ user }}</h1>
+    {% for post in posts %}
+      <strong>Title</strong>{{post['title']}}<br>
+      <strong>Post</strong>{{post['description']}}<br>
+      <br>
+      {% endfor %}
+
+{% else %}
+    <h1>Please log in</h1>
+{% endif %}
+{% endblock %}
+

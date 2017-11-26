@@ -1,0 +1,12 @@
+{% extends 'music/base.html' %}
+{% block body %}
+
+<form action="" class="form-horizonal" method="post">
+	{% csrf_token %}
+ <div class="form-group">
+<label class="control-label">Are you sure u want to delete {{object}}?</label>
+<input type="submit" class="btn btn-success"></input>
+ </div>	
+</form>
+
+{%  endblock %}
