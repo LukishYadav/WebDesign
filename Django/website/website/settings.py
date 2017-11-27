@@ -88,6 +88,10 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
+
+#Page to be redirectedto after login
+LOGIN_REDIRECT_URL = '/music/'
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
