@@ -1,0 +1,46 @@
+{% load static %}
+<html>
+<head><title>{% block title %}{% endblock %}</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" type='text/css'> 
+<link rel="stylesheet" type="text/css" href="{% static 'result/main.css' %}">
+
+<!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</head>
+<nav class="navbar-inverse">
+	<div class="container">
+
+	  <div class="navbar-header">
+			<button class="navbar-toggle" data-toggle="collapse" data-target="#top">
+		      <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+		      <span class="icon-bar"></span></button>
+
+		      <a class="navbar-brand" a href="{% url 'result:hello' %}">BillShock</a>
+	  </div>	      
+	 <div class="collapse navbar-collapse" id="top">
+		 <ul class="nav navbar-nav">
+			<li><a href="{% url 'result:hello' %}">Result</a></li>
+		    <li class="dropdown">
+		      <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Profile<span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+				<li><a href="#">Settings</a></li>
+				<li><a href="#">Logs</a></li>
+				<li><a href="#">LogOut</a></li>
+              </ul>
+
+		 </ul>
+	 
+	 <ul class="nav navbar-nav navbar-right">
+	 	<li><a href="{% url 'result:add' %}"><span class="glyphicon glyphicon-plus"> Add</span></a></li>
+	 	<li><a href="#"><span class="glyphicon glyphicon-off"> LogOut</span></a></li>
+
+	 </ul>
+	 </div>	
+    </div>
+</nav>
+
+{% block body %}{% endblock %}

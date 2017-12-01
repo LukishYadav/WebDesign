@@ -1,0 +1,16 @@
+{% extends 'comics/base.html' %}
+{% block body %}
+
+
+<form class="form-horizonal" method="post">
+{% csrf_token %}
+<div class="form-grop">
+Are you sure you want to delete {{object}} ???
+
+<button type='submit' class="btn btn-danger">Confirm</button>
+
+</div>
+</form>
+
+
+{% endblock %}

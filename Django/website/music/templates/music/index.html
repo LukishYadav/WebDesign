@@ -1,0 +1,40 @@
+<!-- Loads the path to static file -->
+
+{% extends "music/base.html" %}
+
+
+{% block title %}Sunnn{% endblock %}
+
+{% block body %}
+
+
+{% if album_all %}
+ <strong>Here are all my albums</strong><p></p>
+
+   {% for album in album_all %} 
+   <div class="col-sm-3">
+  <div class="thumbnail">
+  	
+   <a href="{% url 'music:detail' album.id %}"><img  src="{{album.album_logo.url}}" class="img-responsive"></img></a> 		
+   <div class="caption">
+   <a href="{% url 'music:detail' album.id %}">{{album.album_title}}</a>	
+ 
+ <a href="{% url 'music:album-delete' album.id %}"><button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-trash"></span> Delete</button></a>
+ <a href="{% url 'music:album-update' album.id %}"><button class="btn btn-success" type="submit"><span class="glyphicon glyphicon-trash"></span> Update</button></a> 
+
+</div></div></div>
+   
+   {% endfor %}
+ 
+
+{% else %}
+    <h3>You dont have any albums</h3>
+{% endif %} 
+
+
+
+
+
+{% endblock %}
+ 
+
